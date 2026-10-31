@@ -18,10 +18,34 @@ from flows.common.paths import (
     BRONZE,
     BRONZE_LABELED_NAME,
     BRONZE_METADATA_NAME,
+    BRONZE_QUALITY_NAME,
     BRONZE_UNLABELED_NAME,
 )
 
 log = get_logger(__name__)
+
+
+def quality_report(df: pd.DataFrame) -> dict:
+    """Resumen de calidad: dimensiones, tipos y faltantes por columna.
+
+    Debe devolver un dict con las claves:
+      n_rows, n_cols, dtypes ({col: str(dtype)}), nulls ({col: int}), null_pct ({col: float 0-100}).
+    """
+    n_rows = int(df.shape[0])
+    n_cols = int(df.shape[1])
+    dtypes = {col: str(dtype) for col, dtype in df.dtypes.items()}
+    nulls = {col: int(val) for col, val in df.isnull().sum().items()}
+    null_pct = {
+        col: round(float((val / n_rows) * 100), 2) if n_rows > 0 else 0.0
+        for col, val in df.isnull().sum().items()
+    }
+    return {
+        "n_rows": n_rows,
+        "n_cols": n_cols,
+        "dtypes": dtypes,
+        "nulls": nulls,
+        "null_pct": null_pct,
+    }
 
 
 def read_source(source: str) -> pd.DataFrame:
@@ -63,6 +87,10 @@ def run(source: str | None = None, n_labeled: int | None = None, out_dir: Path =
     }
     (out_dir / BRONZE_METADATA_NAME).write_text(
         json.dumps(metadata, indent=2, ensure_ascii=False), encoding="utf-8"
+    )
+    report = quality_report(df)
+    (out_dir / BRONZE_QUALITY_NAME).write_text(
+        json.dumps(report, indent=2, ensure_ascii=False), encoding="utf-8"
     )
     log.info("Bronze listo: %d etiquetados, %d sin etiqueta", len(labeled), len(unlabeled))
     return metadata
