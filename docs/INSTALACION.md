@@ -4,6 +4,8 @@
 
 Instala los paquetes necesarios siguiendo [estas instrucciones para Ubuntu 26.04](https://github.com/clubdecomputacion/lab-files/blob/main/archivos/ubuntu_setup.md)
 
+Verifica las versiones:
+
 ```bash
 python3 --version
 git --version
