@@ -1,10 +1,8 @@
 # Instalación y Configuración
 
-Comandos para pasar de cero a "listo para el Paso 1". Reemplaza `TU_USUARIO`, `URL_DEL_REPO_ORIGINAL` y tus datos personales.
-
 ## Paquetes del sistema
 
-Instala los paquetes necesarios siguiendo [estas instrucciones para Ubuntu 26.04*(https://github.com/clubdecomputacion/lab-files/blob/main/archivos/ubuntu_setup.md)
+Instala los paquetes necesarios siguiendo [estas instrucciones para Ubuntu 26.04](https://github.com/clubdecomputacion/lab-files/blob/main/archivos/ubuntu_setup.md)
 
 ```bash
 python3 --version
