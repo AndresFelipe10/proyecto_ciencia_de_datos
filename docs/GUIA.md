@@ -45,7 +45,7 @@ Imagina que eres analista de datos en una **empresa de seguros** que investiga p
 | `Cabin` | Cabina (la letra indica la cubierta) | texto (muchos faltantes) |
 | `Embarked` | Puerto de embarque: C = *Cherbourg*, Q = *Queenstown*, S = *Southampton* | categórica |
 
-> **Nota sobre los datos.** El dataset contiene pasajeros de quienes **sabemos** si sobrevivieron (primeras 891 filas, "etiquetados") y pasajeros de quienes **no** (el resto, "sin etiqueta"). En este taller solo se modela con el primer grupo; el segundo se conserva en Bronze y se usa en el Taller #3.
+> **Nota sobre los datos.** El dataset contiene pasajeros de quienes **sabemos** si sobrevivieron (primeras 891 filas, "etiquetados") y pasajeros de quienes **no** (el resto, "sin etiqueta").
 
 ## 2. Principios de diseño
 
