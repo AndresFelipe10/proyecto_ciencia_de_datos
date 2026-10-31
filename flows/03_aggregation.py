@@ -153,3 +153,4 @@ def run(in_dir: Path | None = None, out_dir: Path = GOLD) -> Path:
     )
     log.info("Gold listo: %d tablas en %s", len(tables) + 1, out_dir)
     return out_dir
+

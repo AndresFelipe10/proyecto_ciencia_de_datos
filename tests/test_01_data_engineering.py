@@ -103,3 +103,4 @@ def test_drop_original_columns(sample):
     out = de.drop_original_columns(sample)
     assert not {"Name", "Sex", "Embarked", "Cabin"} & set(out.columns)
     assert "Name" in sample.columns       # la entrada no se modifica
+

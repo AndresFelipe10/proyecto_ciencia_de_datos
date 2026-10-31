@@ -3,7 +3,7 @@ from __future__ import annotations
 
 import json
 import platform
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 import joblib
@@ -205,7 +205,7 @@ def evaluate_on_test(
         "f1": round(float(f1_score(y_test, pred, zero_division=0)), 4),
         "roc_auc": round(float(roc_auc_score(y_test, proba)), 4),
         "threshold": float(threshold),
-        "n_test": int(len(y_test)),
+        "n_test": len(y_test),
     }
 
 
@@ -233,7 +233,7 @@ def save_model(
     meta = {
         **metadata,
         "name": name,
-        "saved_at": datetime.now(timezone.utc).isoformat(),
+        "saved_at": datetime.now(UTC).isoformat(),
         "python_version": platform.python_version(),
         "sklearn_version": sklearn.__version__,
         "pandas_version": pd.__version__,
@@ -313,3 +313,4 @@ def run(in_dir: Path | None = None, models_dir: Path = MODELS) -> Path:
     }
     model_path = save_model(final_pipeline, metadata, name=MODEL_NAME, models_dir=models_dir)
     return model_path
+

@@ -84,3 +84,4 @@ def test_predict_returns_probabilities_and_labels(toy):
     out = ml.predict(pipe, X, threshold=0.5)
     assert list(out.columns) == ["proba_survive", "pred"]
     assert set(out["pred"].unique()) <= {0, 1}
+

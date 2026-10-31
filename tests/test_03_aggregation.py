@@ -54,3 +54,4 @@ def test_run_writes_gold_tables(tmp_path, silver_like):
     out = agg.run(in_dir=silver_dir, out_dir=tmp_path / "gold")
     assert (out / "survival_by_class_sex.parquet").exists()
     assert (out / "chi2_sex_survival.json").exists()
+

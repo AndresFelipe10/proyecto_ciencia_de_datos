@@ -75,3 +75,4 @@ El análisis univariado sugería correlaciones engañosas que fueron aisladas me
 > 1. **Asociación no implica Causalidad:** Una correlación estadística alta (ej. ser mujer o tener tiquete caro) describe lo observado bajo el protocolo específico del 15 de abril de 1912; no garantiza que en un evento contemporáneo ocurra el mismo resultado si los procedimientos de evacuación modernos son distintos.
 > 2. **Evento histórico único:** El Titanic constituye una muestra observacional de un único siniestro nocturno con tiempo prolongado de hundimiento ($\approx 2.5$ horas) y escasez de botes. No es representativo de naufragios con colapso súbito o incendios a bordo.
 > 3. **Riesgo ético de discriminación en modelos de seguro:** Modelar el riesgo actuarial o la prima de un seguro utilizando directamente `Sex` o `Pclass` incurre en sesgos discriminatorios y regulatorios inaceptables en pólizas actuales.
+
